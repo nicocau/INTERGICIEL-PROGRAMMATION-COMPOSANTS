@@ -22,10 +22,8 @@ import java.util.Map;
 @Configuration
 public class TopicsConfiguration {
 
-    /*
-    @Value(value = "${kafka.bootstrapAddress}")
+    @Value(value = "${spring.kafka.bootstrap-servers}")
     private String bootstrapAddress;
-    */
 
     @Value(value = "${reception.topic.name}")
     private String receptionTopicName;
@@ -33,50 +31,13 @@ public class TopicsConfiguration {
     @Value(value = "${envoi.topic.name}")
     private String envoiTopicName;
 
-    /*
     @Bean
     public KafkaAdmin kafkaAdmin() {
         Map<String, Object> configs = new HashMap<>();
         configs.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapAddress);
         return new KafkaAdmin(configs);
     }
-    */
 
-    /*
-    @Bean
-    public Map<String, Object> producerConfigs() {
-        Map<String, Object> props = new HashMap<>();
-        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,
-                bootstrapAddress);
-        props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,
-                StringSerializer.class);
-        props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,
-                StringSerializer.class);
-        return props;
-    }
-
-    @Bean
-    public ProducerFactory<String, String> producerFactory() {
-        return new DefaultKafkaProducerFactory<>(producerConfigs());
-    }
-
-    @Bean
-    public KafkaTemplate<String, String> kafkaTemplate() {
-        return new KafkaTemplate<>(producerFactory());
-    }
-     */
-    /*
-    @Bean
-    public NewTopic topicReception() {
-        return new NewTopic(receptionTopicName, 1, (short) 1);
-    }
-
-    @Bean
-    public NewTopic topicEnvoi() {
-        return new NewTopic(envoiTopicName, 6, (short) 1);
-    }
-     */
-    /*
     @Bean
     public NewTopic topicReception() {
         return TopicBuilder.name(receptionTopicName)
@@ -92,5 +53,4 @@ public class TopicsConfiguration {
                 .replicas(1)
                 .build();
     }
-    */
 }
