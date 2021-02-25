@@ -13,10 +13,6 @@ import org.springframework.kafka.core.KafkaTemplate;
 @SpringBootApplication
 public class Pr3Cs2Application {
 	public static void main(String[] args) {
-		//SpringApplication.run(Pr3Cs2Application.class, args);
-		ConfigurableApplicationContext context = SpringApplication.run(Pr3Cs2Application.class, args);
-
-		Producer producer = context.getBean(Producer.class);
-		producer.send("Topic2","Hello, World!");
+		SpringApplication.run(Pr3Cs2Application.class, args);
 	}
 }
