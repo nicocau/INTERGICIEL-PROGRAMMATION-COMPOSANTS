@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import java.sql.Date;
 
 @Entity
-public class Countries {
+public class Country {
     @Id
     @GeneratedValue
     private int id;

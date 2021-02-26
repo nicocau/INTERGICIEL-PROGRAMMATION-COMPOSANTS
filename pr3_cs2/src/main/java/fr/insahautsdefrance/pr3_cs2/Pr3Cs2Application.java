@@ -8,4 +8,5 @@ public class Pr3Cs2Application {
     public static void main(String[] args) {
         SpringApplication.run(Pr3Cs2Application.class, args);
     }
+
 }

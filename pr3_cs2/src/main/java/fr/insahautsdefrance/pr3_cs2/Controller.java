@@ -1,5 +1,7 @@
 package fr.insahautsdefrance.pr3_cs2;
 
+import fr.insahautsdefrance.pr3_cs2.model.Params;
+import fr.insahautsdefrance.pr3_cs2.model.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -15,11 +17,13 @@ public class Controller {
     private String envoiTopicName;
 
     @Autowired
-    private KafkaTemplate<String, String> kafkaTemplate;
+    private KafkaTemplate<String, Object> kafkaTemplate;
 
     @KafkaListener(topics = "#{'${reception.topic.name}'}", groupId = "myGroup")
-    private void listener(String data) {
+    private void listener(Request data) {
         System.out.println(data);
-        kafkaTemplate.send(envoiTopicName, data + "RESPONSE");
+        Params params = new Params("TES", "TOTO");
+        kafkaTemplate.send(envoiTopicName, params);
     }
+
 }
