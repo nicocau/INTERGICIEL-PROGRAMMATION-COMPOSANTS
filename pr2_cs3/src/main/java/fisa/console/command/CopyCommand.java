@@ -15,8 +15,8 @@ public class CopyCommand extends Command {
 		editor.clipboard = editor.textField.getText();
 		//if(editor.textField.getText().equals("test"))
 		editor.textField.insert(":\ntest réussi\n \n", editor.textField.getCaretPosition());
-		Producer t = null;
-		t.sendMessagePr2("editor.textField.getText()");
+		Producer t;
+		//t.sendMessagePr2("editor.textField.getText()");
 		return false;
 	}
 
