@@ -1,9 +1,8 @@
 package fr.insahautsdefrance.cs1.entity;
 
-import javax.persistence.*;
-import java.sql.Date;
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
 public class Global {
@@ -30,7 +29,7 @@ public class Global {
     private int totalRecovered;
 
 
-    private Date datemaj;
+    private String datemaj;
 
     public int getId() {
         return id;
@@ -88,11 +87,11 @@ public class Global {
         this.totalRecovered = totalRecovered;
     }
 
-    public Date getDatemaj() {
+    public String getDatemaj() {
         return datemaj;
     }
 
-    public void setDatemaj(Date datemaj) {
+    public void setDatemaj(String datemaj) {
         this.datemaj = datemaj;
     }
 }
