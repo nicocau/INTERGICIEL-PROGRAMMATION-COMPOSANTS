@@ -9,59 +9,17 @@ public class Global {
     private int TotalRecovered;
     private String Date;
 
-    public int getNewConfirmed() {
-        return NewConfirmed;
-    }
+    public fr.insahautsdefrance.cs1.entity.Global convert() {
+        fr.insahautsdefrance.cs1.entity.Global res = new fr.insahautsdefrance.cs1.entity.Global();
 
-    public void setNewConfirmed(int newConfirmed) {
-        NewConfirmed = newConfirmed;
-    }
+        res.setNewConfirmed(this.NewConfirmed);
+        res.setTotalConfirmed(this.TotalConfirmed);
+        res.setNewDeaths(this.NewDeaths);
+        res.setTotalDeaths(this.TotalDeaths);
+        res.setNewRecovered(this.NewRecovered);
+        res.setTotalRecovered(this.TotalRecovered);
+        res.setDatemaj(this.Date);
 
-    public int getTotalConfirmed() {
-        return TotalConfirmed;
-    }
-
-    public void setTotalConfirmed(int totalConfirmed) {
-        TotalConfirmed = totalConfirmed;
-    }
-
-    public int getNewDeaths() {
-        return NewDeaths;
-    }
-
-    public void setNewDeaths(int newDeaths) {
-        NewDeaths = newDeaths;
-    }
-
-    public int getTotalDeaths() {
-        return TotalDeaths;
-    }
-
-    public void setTotalDeaths(int totalDeaths) {
-        TotalDeaths = totalDeaths;
-    }
-
-    public int getNewRecovered() {
-        return NewRecovered;
-    }
-
-    public void setNewRecovered(int newRecovered) {
-        NewRecovered = newRecovered;
-    }
-
-    public int getTotalRecovered() {
-        return TotalRecovered;
-    }
-
-    public void setTotalRecovered(int totalRecovered) {
-        TotalRecovered = totalRecovered;
-    }
-
-    public String getDate() {
-        return Date;
-    }
-
-    public void setDate(String date) {
-        Date = date;
+        return res;
     }
 }

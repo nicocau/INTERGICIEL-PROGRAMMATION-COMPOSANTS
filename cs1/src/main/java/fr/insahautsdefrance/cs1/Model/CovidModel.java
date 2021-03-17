@@ -8,4 +8,12 @@ public class CovidModel {
     private Global Global;
     private ArrayList<Countries> Countries;
     private String Date;
+
+    public Global getGlobal() {
+        return Global;
+    }
+
+    public ArrayList<Countries> getCountries() {
+        return Countries;
+    }
 }
