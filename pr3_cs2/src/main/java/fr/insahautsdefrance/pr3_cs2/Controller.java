@@ -57,64 +57,84 @@ public class Controller {
     }
 
     private Response getGlobalValues(Request data) {
-        Optional<Global> global = globalRepository.findFirstByOrderByIdAsc();
-        if (global.isPresent()) {
-            return new ResponseGlobal(data, global.get());
+        try {
+            Optional<Global> global = globalRepository.findFirstByOrderByIdAsc();
+            if (global.isPresent()) {
+                return new ResponseGlobal(data, global.get());
+            }
+            return new ResponseString(data, "No data available");
+        } catch (Exception e) {
+            return new ResponseString(data, "No data available (ERR-500)");
         }
-        return new ResponseString(data, "No data available");
     }
 
     private Response getCountryValues(Request data) {
-        Optional<Params> pays = data.getParams().stream().filter(param -> param.getName().equals("v_pays")).findFirst();
-        if (pays.isPresent()) {
-            List<Country> countries = countryRepository.findByCountry(pays.get().getValue());
-            if (!countries.isEmpty()) {
-                return new ResponseCountry(data, countries.get(0));
+        try {
+            Optional<Params> pays = data.getParams().stream().filter(param -> param.getName().equals("v_pays")).findFirst();
+            if (pays.isPresent()) {
+                List<Country> countries = countryRepository.findByCountry(pays.get().getValue());
+                if (!countries.isEmpty()) {
+                    return new ResponseCountry(data, countries.get(0));
+                }
+                return new ResponseString(data, "No data available");
             }
-            return new ResponseString(data, "No data available");
+            return new ResponseString(data, "Bad param: v_pays");
+        } catch (Exception e) {
+            return new ResponseString(data, "No data available (ERR-500)");
         }
-        return new ResponseString(data, "Bad param: v_pays");
     }
 
     private Response getConfirmedAvg(Request data) {
-        List<Country> countries = countryRepository.findAll();
-        if (!countries.isEmpty()) {
-            int avg = 0;
-            for (Country country : countries) {
-                avg += country.getTotalConfirmed();
+        try {
+            List<Country> countries = countryRepository.findAll();
+            if (!countries.isEmpty()) {
+                int avg = 0;
+                for (Country country : countries) {
+                    avg += country.getTotalConfirmed();
+                }
+                avg = avg / countries.size();
+                return new ResponseString(data, String.valueOf(avg));
             }
-            avg = avg / countries.size();
-            return new ResponseString(data, String.valueOf(avg));
+            return new ResponseString(data, "No data available");
+        } catch (Exception e) {
+            return new ResponseString(data, "No data available (ERR-500)");
         }
-        return new ResponseString(data, "No data available");
     }
 
     private Response getDeathsAvg(Request data) {
-        List<Country> countries = countryRepository.findAll();
-        if (!countries.isEmpty()) {
-            int avg = 0;
-            for (Country country : countries) {
-                avg += country.getTotalDeaths();
+        try {
+            List<Country> countries = countryRepository.findAll();
+            if (!countries.isEmpty()) {
+                int avg = 0;
+                for (Country country : countries) {
+                    avg += country.getTotalDeaths();
+                }
+                avg = avg / countries.size();
+                return new ResponseString(data, String.valueOf(avg));
             }
-            avg = avg / countries.size();
-            return new ResponseString(data, String.valueOf(avg));
+            return new ResponseString(data, "No data available");
+        } catch (Exception e) {
+            return new ResponseString(data, "No data available (ERR-500)");
         }
-        return new ResponseString(data, "No data available");
     }
 
     private Response getCountriesDeathsPercent(Request data) {
-        List<Country> countries = countryRepository.findAll();
-        if (!countries.isEmpty()) {
-            int deaths = 0;
-            int confirmed = 0;
-            for (Country country : countries) {
-                deaths += country.getTotalDeaths();
-                confirmed += country.getTotalConfirmed();
+        try {
+            List<Country> countries = countryRepository.findAll();
+            if (!countries.isEmpty()) {
+                int deaths = 0;
+                int confirmed = 0;
+                for (Country country : countries) {
+                    deaths += country.getTotalDeaths();
+                    confirmed += country.getTotalConfirmed();
+                }
+                int percentage = deaths / confirmed;
+                return new ResponseString(data, String.valueOf(percentage));
             }
-            int percentage = deaths / confirmed;
-            return new ResponseString(data, String.valueOf(percentage));
+            return new ResponseString(data, "No data available");
+        } catch (Exception e) {
+            return new ResponseString(data, "No data available (ERR-500)");
         }
-        return new ResponseString(data, "No data available");
     }
 
     private Response getHelp(Request data) {
