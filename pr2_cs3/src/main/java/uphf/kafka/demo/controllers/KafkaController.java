@@ -38,9 +38,10 @@ public class KafkaController {
     //declare un service post pour le producer de nom publish.
     @GetMapping(value = "/publish")
     public String sendMessageToKafkaTopic(@RequestParam("message") String message) throws IOException {
+        message = "{ \"command\": \""+message + "\", \"params\": []}";
         producer.sendMessagePr2(message);
         String re= consumer.consumeCs2(message);
-        re =re + " message in topic 3: ";
+        //re =re + " message in topic 3: ";
         producer.sendMessagePr3(re);
         return consumer.consumeCs3(re);
     }

@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Countries {
+public class Country {
     @Id
     @GeneratedValue
     private int id;

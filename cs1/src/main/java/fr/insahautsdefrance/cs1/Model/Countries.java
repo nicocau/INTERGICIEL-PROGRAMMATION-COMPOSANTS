@@ -1,5 +1,7 @@
 package fr.insahautsdefrance.cs1.Model;
 
+import fr.insahautsdefrance.cs1.entity.Country;
+
 public class Countries {
     private String ID;
     private String Country;
@@ -13,8 +15,8 @@ public class Countries {
     private int TotalRecovered;
     private String Date;
 
-    public fr.insahautsdefrance.cs1.entity.Countries convert() {
-        fr.insahautsdefrance.cs1.entity.Countries res = new fr.insahautsdefrance.cs1.entity.Countries();
+    public fr.insahautsdefrance.cs1.entity.Country convert() {
+        fr.insahautsdefrance.cs1.entity.Country res = new Country();
 
         res.setCountry(this.Country);
         res.setCountryCode(this.CountryCode);

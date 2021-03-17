@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 public class Producer {
 
     private static final Logger logger = LoggerFactory.getLogger(Producer.class);
-    private static final String TOPIC2 = "topic2";
-    private static final String TOPIC3 = "topic3";
+    private static final String TOPIC2 = "Topic2";
+    private static final String TOPIC3 = "Topic3";
 
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
