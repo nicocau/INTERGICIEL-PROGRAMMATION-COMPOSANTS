@@ -20,7 +20,7 @@ public class Consumer {
         return "Reponse de notre consumer: "+message; 
     }
     
-    @KafkaListener(topics = "topic2", groupId = "group_id")
+    @KafkaListener(topics = "Topic2", groupId = "group_id")
     public String consumeCs2(String message) throws IOException {
     	
         logger.info(String.format("#### -> Consumed message -> %s", message));
