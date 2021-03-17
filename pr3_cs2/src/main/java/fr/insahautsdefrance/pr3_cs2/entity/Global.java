@@ -30,7 +30,7 @@ public class Global {
     private int totalRecovered;
 
 
-    private Date datemaj;
+    private String datemaj;
 
     public int getId() {
         return id;
@@ -88,11 +88,11 @@ public class Global {
         this.totalRecovered = totalRecovered;
     }
 
-    public Date getDatemaj() {
+    public String getDatemaj() {
         return datemaj;
     }
 
-    public void setDatemaj(Date datemaj) {
+    public void setDatemaj(String datemaj) {
         this.datemaj = datemaj;
     }
 }

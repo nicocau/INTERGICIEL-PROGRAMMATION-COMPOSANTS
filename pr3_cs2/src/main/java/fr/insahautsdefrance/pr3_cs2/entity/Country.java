@@ -29,7 +29,7 @@ public class Country {
 
     private int totalRecovered;
 
-    private Date datemaj;
+    private String datemaj;
 
     public String getCountryCode() {
         return countryCode;
@@ -103,11 +103,11 @@ public class Country {
         this.totalRecovered = totalRecovered;
     }
 
-    public Date getDatemaj() {
+    public String getDatemaj() {
         return datemaj;
     }
 
-    public void setDatemaj(Date datemaj) {
+    public void setDatemaj(String datemaj) {
         this.datemaj = datemaj;
     }
 }
