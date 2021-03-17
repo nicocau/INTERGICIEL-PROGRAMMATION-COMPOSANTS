@@ -2,7 +2,7 @@ package fr.insahautsdefrance.pr3_cs2.model;
 
 import fr.insahautsdefrance.pr3_cs2.entity.Country;
 
-public class ResponseCountry {
+public class ResponseCountry extends Response {
     private Request request;
     private Country value;
 

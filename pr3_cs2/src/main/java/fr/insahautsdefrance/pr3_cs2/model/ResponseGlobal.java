@@ -2,7 +2,7 @@ package fr.insahautsdefrance.pr3_cs2.model;
 
 import fr.insahautsdefrance.pr3_cs2.entity.Global;
 
-public class ResponseGlobal {
+public class ResponseGlobal extends Response {
     private Request request;
     private Global value;
 
