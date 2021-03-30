@@ -11,7 +11,7 @@
 	<groupId>fr.insa-hautsdefrance</groupId>
 	<artifactId>pr3_cs2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>pr3_cs2</name>
+	<name>pr2_cs3</name>
 	<description>Middleware - il consomme les commandes et produit les réponses</description>
 	<properties>
 		<java.version>11</java.version>
