@@ -1,14 +1,16 @@
-package fr.insahautsdefrance.pr3_cs2.model;
+package model;
 
-public class ResponseString extends Response {
+import fr.insahautsdefrance.pr3_cs2.entity.Country;
+
+public class ResponseCountry extends Response {
     private Request request;
-    private String value;
+    private Country value;
 
-    public ResponseString(){
+    public ResponseCountry(){
         super();
     }
 
-    public ResponseString(Request request, String value) {
+    public ResponseCountry(Request request, Country value) {
         super();
         this.request = request;
         this.value = value;
@@ -22,16 +24,17 @@ public class ResponseString extends Response {
         this.request = request;
     }
 
-    public String getValue() {
+    public Country getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(Country value) {
         this.value = value;
     }
 
     @Override
     public String toString() {
-        return "ResponseString [request=" + request + ", value=" + value + "]";
+        return "ResponseCountry [request=" + request + ", value=" + value + "]";
+
     }
 }

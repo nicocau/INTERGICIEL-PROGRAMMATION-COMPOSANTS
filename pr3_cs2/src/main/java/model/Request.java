@@ -1,4 +1,4 @@
-package pr2_cs3.model;
+package model;
 
 import java.util.List;
 

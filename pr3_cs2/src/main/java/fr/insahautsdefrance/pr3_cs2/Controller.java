@@ -2,7 +2,7 @@ package fr.insahautsdefrance.pr3_cs2;
 
 import fr.insahautsdefrance.pr3_cs2.entity.Country;
 import fr.insahautsdefrance.pr3_cs2.entity.Global;
-import fr.insahautsdefrance.pr3_cs2.model.*;
+import model.*;
 import fr.insahautsdefrance.pr3_cs2.repository.CountryRepository;
 import fr.insahautsdefrance.pr3_cs2.repository.GlobalRepository;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package fr.insahautsdefrance.pr3_cs2.model;
+package model;
 
 public class Params {
     private String name;

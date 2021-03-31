@@ -1,10 +1,11 @@
-package fr.insahautsdefrance.pr3_cs2.model;
+package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Request {
     private String command;
-    private List<Params> params;
+    private List<Params> params = new ArrayList<>();
 
     public Request(){
         super();

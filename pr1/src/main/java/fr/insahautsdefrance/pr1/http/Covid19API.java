@@ -25,7 +25,7 @@ public class Covid19API {
     @Autowired
     private TopicsConfiguration topicsConfiguration;
 
-    @Scheduled(fixedDelay = 10000)
+    @Scheduled(fixedDelay = 120000)
     public void getInformation() throws IOException, InterruptedException {
         try {
             HttpClient httpClient = HttpClient.newBuilder()

@@ -1,13 +1,15 @@
 package pr2_cs3;
 
+import model.Params;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
-import pr2_cs3.model.Request;
+import model.Request;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 @Component
@@ -29,16 +31,26 @@ public class Controller implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
+        String input = "";
+
         while(!input.equals("Exit")){
-            Request request = new Request();
-            request.setCommand(input);
+            if(!input.isEmpty()){
+                Request request = new Request();
+                request.setCommand(input);
 
-            //TODO : Gestion des params
+                if(input.contains("Get_country_values")){
+                    request.setCommand("Get_country_values");
+                    Arrays.stream(input.split(" "))
+                            .filter( s -> !s.equals("Get_country_values"))
+                            .forEach(s -> request.getParams().add(new Params("v_pays", s)));
+                }
 
-            kafkaTemplate.send(envoiTopicName, request);
+                System.out.println(request);
+                kafkaTemplate.send(envoiTopicName, request);
+            }
 
             input = scanner.nextLine();
+            System.out.println("> " + input);
         }
     }
 }

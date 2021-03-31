@@ -1,4 +1,4 @@
-package pr2_cs3.model;
+package model;
 
 public class Params {
     private String name;

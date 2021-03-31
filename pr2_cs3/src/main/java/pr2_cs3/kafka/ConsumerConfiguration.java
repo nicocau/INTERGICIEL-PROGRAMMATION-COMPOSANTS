@@ -30,9 +30,9 @@ public class ConsumerConfiguration {
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, ErrorHandlingDeserializer.class);
         props.put(ErrorHandlingDeserializer.KEY_DESERIALIZER_CLASS, StringDeserializer.class);
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, ErrorHandlingDeserializer.class);
-        props.put(ErrorHandlingDeserializer.VALUE_DESERIALIZER_CLASS, JsonDeserializer.class);
-        props.put(JsonDeserializer.VALUE_DEFAULT_TYPE, "fr.insahautsdefrance.pr3_cs2.model.Request");
-        props.put(JsonDeserializer.TRUSTED_PACKAGES, "fr.insahautsdefrance.pr3_cs2.model");
+        props.put(ErrorHandlingDeserializer.VALUE_DESERIALIZER_CLASS, StringDeserializer.class);
+        props.put(JsonDeserializer.VALUE_DEFAULT_TYPE, "model.Request");
+        props.put(JsonDeserializer.TRUSTED_PACKAGES, "model");
         return props;
     }
 

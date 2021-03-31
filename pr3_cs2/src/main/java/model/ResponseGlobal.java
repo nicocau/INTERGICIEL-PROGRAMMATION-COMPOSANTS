@@ -1,4 +1,4 @@
-package fr.insahautsdefrance.pr3_cs2.model;
+package model;
 
 import fr.insahautsdefrance.pr3_cs2.entity.Global;
 
