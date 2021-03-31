@@ -1,9 +1,7 @@
-package uphf.kafka.demo;
+package old.uphf.kafka.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import fisa.console.editor.Editor;
 
 
 //point d'entrée de l'application
